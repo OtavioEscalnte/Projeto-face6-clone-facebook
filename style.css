@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "header header header"
+    "sidenav main aside";
+}
+
+header{
+    grid-area: header;
+    padding:0 20px;
+    background-color:#ffffff;
+}
+
+.center{
+margin: auto;
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 50px;
+}
+
+.center .elements{
+    display: flex;
+}
+
+.center .elements input{
+height: 35px;
+margin: auto 10px;
+width: 200px;
+border-radius: 20px;
+padding: 5px;
+}
+
+.center .elements .fa-facebook{
+color:#087ae9 ;
+font-size: 40px;
+margin: auto;
+}
+
+.center  .cards{
+    width: 80%;
+}
