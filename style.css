@@ -9,32 +9,28 @@ body{
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "header header header"
     "sidenav main aside";
+    background-color: #f0f2f5;
 }
 
 header{
     grid-area: header;
-    padding:0 20px;
     background-color:#ffffff;
+    border-bottom:3px solid #dddfe2;
 }
 
 .center{
+width: 1880px;
+max-width: 100%;
 margin: auto;
 display: flex;
 justify-content: space-between;
 align-items: center;
-height: 50px;
+height: 60px;
+padding: 5px;
 }
 
 .center .elements{
     display: flex;
-}
-
-.center .elements input{
-height: 35px;
-margin: auto 10px;
-width: 200px;
-border-radius: 20px;
-padding: 5px;
 }
 
 .center .elements .fa-facebook{
@@ -43,6 +39,116 @@ font-size: 40px;
 margin: auto;
 }
 
-.center  .cards{
-    width: 80%;
+.center .elements input{
+height: 35px;
+margin: auto 10px;
+width: 240px;
+border-radius: 20px;
+padding: 5px;
+}
+
+
+
+.center .cards nav{
+    display: flex;
+}
+
+.center .cards nav a + a{
+    margin-left: 10px;
+}
+
+.center .cards nav a{
+    text-decoration: none;
+    color: #65676b;
+    padding: 15px 45px;
+    font-size: 25px;
+    
+}
+
+.center .cards nav a{
+    color:#1877f2;
+    border-bottom: 1px solid #1877f2;
+}
+
+
+.center .options nav a {
+    text-decoration: none;
+    color:#050505;
+    font-size: 18px;
+    padding:12px 15px;
+    border-radius: 50%;
+    background-color:#e4e6eb;
+    margin-left: 5px;
+}
+
+.sidenav{
+    grid-area: sidenav;
+    min-height: 40vh;
+    width: 400px;
+    height: 93vh;
+    overflow-y: scroll;
+}
+
+
+
+
+
+
+.sidenav .menu-nav div{
+    display: flex;
+    margin: 0 0 5px 12px;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.sidenav .menu-nav div:hover{
+    background-color: #e4e6e9;
+    border-radius: 10px;
+    transition: .01s;
+}
+
+.sidenav .menu-nav div h5{
+    margin-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight:500;
+}
+
+.sidenav .imagem{
+    height: 40px;
+}
+
+.sidenav .imagem img{
+    height: 100%;
+}
+
+.sidenav .atalhos{
+    display: block;
+    margin-left: 20px;
+}
+
+.sidenav .atalhos h4{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:18px;
+    color: #838589;
+    margin: 10px 0;
+}
+
+.sidenav .atalhos nav{
+    display: flex;
+    flex-wrap: wrap;
+    width: 250px;
+    margin-bottom: 5px;
+}
+
+.sidenav .atalhos nav a{
+    margin-right: 3px;
+    text-decoration: none;
+    color: #838589;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:12px ;
+}
+
+main{
+    grid-area: main;
 }
