@@ -6,7 +6,7 @@
 
 body{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: minmax(400px, 1fr) 40% 1fr;
     grid-template-areas: "header header header"
     "sidenav main aside";
     background-color: #f0f2f5;
@@ -64,18 +64,19 @@ background-color:#f0f2f5 ;
     
 }
 
+
 .center .cards nav{
     display: flex;
 }
 
 .center .cards nav a + a{
-    margin-left: 45px;
+    margin-left: 25px;
 }
 
 .center .cards nav a{
     text-decoration: none;
     color: #65676b;
-    padding: 15px 45px;
+    padding: 15px 35px;
     font-size: 25px;
     
 }
@@ -83,10 +84,6 @@ background-color:#f0f2f5 ;
 .center .cards nav a:active{
     color:#1877f2;
     border-bottom: 1px solid #1877f2;
-}
-
-.center .options{
-    margin-left: 80px;
 }
 
 
@@ -102,16 +99,15 @@ background-color:#f0f2f5 ;
 
 .sidenav{
     grid-area: sidenav;
-    max-width: 400px;
-    width: 480x;
-    overflow-y: scroll;
-    height: 100vh;
-    min-height: 100vh;
     margin: 60px 0 0;
-    position: fixed;
-    
 }
 
+
+.nav-sidenav{
+    width: 65%;
+    overflow-y: scroll;
+    height: 100vh;
+}
 
 
 
@@ -119,7 +115,7 @@ background-color:#f0f2f5 ;
 
 .sidenav .menu-nav div{
     display: flex;
-    margin: 0px 0 5px 12px;
+    margin: 0px 5px 5px 12px;
     align-items: center;
     padding: 5px 0;
 }
@@ -173,181 +169,113 @@ background-color:#f0f2f5 ;
 }
 
 main{
+    margin-top: 70px;
     grid-area: main;
-    margin:60px auto 0;
-    max-width: 740px;
-    width: 780px;
     min-height: 100vh;
    
     }
 
 main .stories{
+    margin: auto;
     display: flex;
-    margin: 30px 0;
+    justify-content: space-between;
+     width: 100%;
+
 }
 
-main .stories div{
-    height: 200px;
-    margin:0 auto;
+main .stories .foto-stories{
+    height: 180px;
+    width: 120px;
+    
 }
 
-main .stories div a img{
+main .stories .foto-stories img{
     height: 100%;
-    width: 110px;
-    border-radius: 20px;
-    opacity: .9;
+    width: 100%;
+   border-radius: 10px;
+   padding: 0 1px;
 }
 
-main .stories div a img:hover{
- opacity: 1;
- transition: .5s;
- 
-}
+
 
 main .status{
-    background-color: #ffffff;
-    border-radius: 20px;
+    margin: 20px 0;
+    width: 100%;
+    border-radius: 10px;
+    background-color:#ffffff;
 }
 
-main .status .pensamento {
+main .status .pensamento{
     display: flex;
-    margin-left: 15px; 
     align-items: center;
     padding: 10px;
+
+}
+main .status .perfil{
+    height: 40px;
+    margin-right: 10px;
+}
+
+main .status img{
+    height: 100%;
+    width: 40px;
+    border-radius: 100px;
+}
+
+main .status .pensamento input {
+    width: 90%;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color:#f0f2f5 ;
+    padding: 10px;
+    font-size: 15px
+}
+
+
+main .status .pensamento input:focus{
+    border: 0 none;
+    outline: 0;
+}
+
+main .status hr{
+    width: 97%;
     margin: auto;
 }
 
-main .status .pensamento div{
-    height: 50px;
+main .status .media{
+    padding: 20px;
 }
 
-main .status .pensamento div a img{
-    height: 100%;
-    width: 50px;
-    border-radius: 50px;
-}
-
-main .status .pensamento input{
-    width: 650px;
-    height: 45px;
-    margin-left: 10px;
-    border-radius: 20px;
-    border: none;
-    padding: 10px;
-    background-color:#f0f2f5 ;
-}
-
-main .status .pensamento input::-webkit-input-placeholder{
-    font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
-    
-}
-
-main .status .pensamento input:focus{
-    outline: 0;
-    border: 0 none;
-}
-
-main .status .midia{
+main .status .media div{
     display: flex;
     justify-content: space-around;
-    padding: 10px;
 }
 
-main .status .midia a{
+main .status .media div a{
     display: flex;
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
     align-items: center;
-    padding: 10px 40px;
-    
+    text-decoration: none;
 }
 
-main .status .midia a:hover{
-    background-color: #e4e6e9;
-    border-radius: 10px;
-    transition: .1s;
+main .status .media div a i{
+    font-size: 20px;
 }
 
-main .status .midia a .fa-video{
-    color: #f02849;
-    font-size: 25px;
+main .status .media div a .fa-video{
+    color:#f35972 ;
 }
 
-main .status .midia a .fa-photo-video{
+main .status .media div a .fa-images{
     color: #45bd62;
-    font-size: 25px;
 }
 
-main .status .midia a .fa-smile{
-    color:#f7b928 ;
-    font-size: 25px;
+main .status .media div a .fa-smile{
+    color: #f7b928;
 }
 
-main .status .midia a h5{
-    margin-left: 20px;
-    color: #65676b;
-}
-main .noticias{
-    margin: 50px 0;
-    background-color: #ffffff;
-    border-radius: 20px;
-    padding: 10px;
-}
-
-main .noticias .perfil{
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 30px;
-}
-
-main .noticias .perfil div{
-    height: 50px;
-
-}
-
-main .noticias .perfil div img{
-    height: 100%;
-    width: 50px;
-    border-radius: 50px;
-}
-
-main .noticias .perfil h5{
+main .status .media div a p{
     margin-left: 10px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+    color:#65676b; ;
 }
-
-main .noticias .foto{
-   height: 400px;
-   width: 100%;
-}
-
-main .noticias .foto img{
-    height: 100%;
-    width: 100%;
-}
-
-main .noticias hr{
-    margin: 30px 0;
-}
-
-main .noticias .reação{
-    display: flex;
-    justify-content: space-around;
-    margin: 20px 0;
-}
-
-main .noticias .reação a{
-    display: flex;
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #65676b;
-}
-
-main .noticias .reação a h5 {
-    margin-left: 10px;
-}
-
-
