@@ -6,7 +6,7 @@
 
 body{
     display: grid;
-    grid-template-columns: minmax(400px, 1fr) 40% 1fr;
+    grid-template-columns: minmax(400px, 1fr) 35% minmax(400px, 1fr);
     grid-template-areas: "header header header"
     "sidenav main aside";
     background-color: #f0f2f5;
@@ -104,7 +104,7 @@ background-color:#f0f2f5 ;
 
 
 .nav-sidenav{
-    width: 65%;
+    width: 60%;
     overflow-y: scroll;
     height: 100vh;
 }
@@ -168,6 +168,38 @@ background-color:#f0f2f5 ;
     font-size:12px ;
 }
 
+aside{
+    grid-area: aside;
+    margin: 60px 0 0 245px;
+    background-color: #087ae9;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+aside .nav-aside{
+    padding: 10px;
+}
+
+aside .nav-aside div .contato{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+aside .nav-aside div .contato p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+
+}
+
+aside .nav-aside div .opcoes a{
+    margin-right: 10px;
+}
+
+aside .nav-aside div .opcoes a, p{
+    color: #838589;
+}
+
 main{
     margin-top: 70px;
     grid-area: main;
@@ -176,10 +208,9 @@ main{
     }
 
 main .stories{
-    margin: auto;
+    
     display: flex;
     justify-content: space-between;
-     width: 100%;
 
 }
 
@@ -193,7 +224,7 @@ main .stories .foto-stories img{
     height: 100%;
     width: 100%;
    border-radius: 10px;
-   padding: 0 1px;
+   padding: 0 4px;
 }
 
 
@@ -278,4 +309,67 @@ main .status .media div a p{
     margin-left: 10px;
     font-family: Arial, Helvetica, sans-serif;
     color:#65676b; ;
+}
+
+main .noticias{
+    background-color:#ffffff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+main .noticias .perfil-noticias{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+main .noticias  .perfil-noticias .foto{
+    height: 40px;
+}
+
+main .noticias  .perfil-noticias .foto img{
+    height: 100%;
+    width: 40px;
+    border-radius: 100px;
+}
+
+main .noticias .perfil-noticias p{
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+main .noticias .imagem{
+    height: 500px;
+}
+
+main .noticias .imagem img{
+    height: 100%;
+    width: 100%;
+}
+
+main .noticias hr{
+    
+    margin: 10px auto;
+    width: 95%;
+    
+}
+
+main .noticias .acoes{
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+}
+
+main .noticias .acoes a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #65676b;
+}
+
+main .noticias .acoes a p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin-left: 10px;
 }
