@@ -4,12 +4,17 @@
     padding: 0;
 }
 
+html, body{
+    overflow-x: hidden;
+}
+
 body{
     display: grid;
     grid-template-columns: minmax(400px, 1fr) minmax(500px, 35%)  minmax(450px, 1fr);
     grid-template-areas: "header header header"
     "sidenav main aside";
     background-color: #f0f2f5;
+    
 }
 
 header{
@@ -182,7 +187,7 @@ background-color:#f0f2f5 ;
 
 aside{
     grid-area: aside;
-    margin: 60px 0 0 245px;
+    margin: 60px 0 0 200px;
     background-color: #f0f2f5;
     overflow-y: scroll;
     height: 100vh;
@@ -247,11 +252,11 @@ main{
     }
 
 main .stories{
-    
     display: flex;
     justify-content: space-between;
 
 }
+
 
 main .stories .foto-stories{
     height: 170px;
@@ -266,11 +271,28 @@ main .stories .foto-stories img{
    padding: 0 4px;
 }
 
+main .stories-mobile{
+    margin: 20px 0;
+    display: none;
+    justify-content: space-between;
+}
+
+main .stories-mobile .foto-stories{
+    height: 170px;
+    width: 120px;
+}
+
+main .stories-mobile .foto-stories img{
+    height: 100%;
+    width: 100%;
+   border-radius: 10px;
+   padding: 0 4px;
+}
+
 
 
 main .status{
     margin: 20px 0;
-    
     width: 100%;
     border-radius: 10px;
     background-color:#ffffff;
@@ -352,6 +374,52 @@ main .status .media div a p{
     color:#65676b; ;
 }
 
+main .status-mobile{
+    width: 100%;
+    border-radius: 10px;
+    background-color:#ffffff;
+    padding: 10px;
+    display: none;
+}
+
+main .status-mobile .pensamento{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .status-mobile .pensamento .perfil{
+    height: 40px;
+    margin-right: 10px;
+}
+
+main .status-mobile .pensamento .perfil img{
+    height: 100%;
+    width: 40px;
+    border-radius: 100px;
+}
+
+main .status-mobile .pensamento input{
+    width: 85%;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 20px;
+    border: none;
+    background-color:#f0f2f5 ;
+    padding: 10px;
+    font-size: 15px
+}
+
+main .status-mobile .pensamento input:focus{
+    border: 0 none;
+    outline: 0;
+}
+
+main .status-mobile .pensamento .foto i{
+    font-size: 20px;
+    height: 100%;
+}
+
 main .noticias{
     background-color:#ffffff;
     border-radius: 10px;
@@ -419,6 +487,9 @@ main .noticias .acoes a p{
 
 
 @media only screen and (max-width:1260px){
+
+    
+
     .center .elements input{
         display: none;
     }
@@ -473,14 +544,14 @@ main .noticias .acoes a p{
 
 }
 
-@media only screen and (max-width:1016px){
+@media  (max-width:1016px){
 
     main .stories .foto-stories:nth-child(6) {
         display: none;
     }
 }
 
-@media only screen and (max-width:900px){
+@media  (max-width:900px){
     body{
         grid-template-columns: 2fr;
     }
@@ -503,24 +574,24 @@ main .noticias .acoes a p{
     }
 }
 
-@media only screen and (max-width:817px){
+@media  (max-width:817px){
     .center .cards nav a{
         padding: 15px 20px;
     }
 }
 
 
-@media only screen and (max-width:700px){
+@media  (max-width:700px){
     .center .cards{
         display: none;
     }
     main{
-        width: 100%;
-        margin:70px 15px;
+        width: 85%;
+        margin:70px 22px;
     }
 }
 
-@media only screen and (max-width:676px){
+@media  (max-width:676px){
     main{
         width: 100%;
         margin: 70px auto;
@@ -541,6 +612,35 @@ main .noticias .acoes a p{
         width: 100%;
        border-radius: 10px;
        padding: 0 4px;
+    }
+
+    main .status, main .noticias{
+        border-radius:0 ;
+    }
+
+   
+}
+
+@media only screen and (max-width:600px){
+    main .status .media a:nth-child(2){
+        display: none;
+    }
+}
+
+@media only screen and (max-width:570px){
+    main{
+        width:90% ;
+        margin: 70px 0;
+    }
+    .sidenav{
+        display: none;
+    }
+}
+
+@media only screen and (max-width:526px){
+    main{
+        width: 80%;
+        margin: 70px 0 ;
     }
 }
 
@@ -563,19 +663,20 @@ main .noticias .acoes a p{
     .header-mobile .busca{
         display: flex;
         justify-content: space-between;
+        align-items: center;
         width: 100%;
         
     }
 
     .header-mobile .busca i{
-        font-size: 30px;
+        font-size: 25px;
         color: #ffffff;
     }
 
     .header-mobile .busca input{
         width: 60%;
         text-align: center;
-        font-size: 25px;
+        font-size: 15px;
         border: none;
         border-bottom: 1px solid #ffffff;
         background-color: #3b5998;
@@ -603,11 +704,39 @@ main .noticias .acoes a p{
       
     }
     .menu-mobile .menus i{
-        font-size: 30px;
+        font-size: 20px;
         
     }
     main{
+       width: 100%;
+        margin: 130px 0;
+    }
+
+    main .stories{
+        display: none;
+    }
+
+    main .status{
+        display: none;
+    }
+
+    main .status-mobile{
+        display: block;
+    }
+
+    main .stories-mobile{
+        display: flex;
+    }   
+
+    main .noticias .acoes a i{
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width:335px) {
+    main{
+        width:93% ;
        
-        margin: 130px auto;
     }
 }
